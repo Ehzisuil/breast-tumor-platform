@@ -1,0 +1,228 @@
+/* ========================================================================
+   乳腺肿瘤全周期智能管理平台 — 共享设计系统
+   设计基调：专业、可信、温暖（医疗蓝绿 + 乳腺健康粉）
+   ======================================================================== */
+
+:root {
+  /* 主色：医疗蓝绿（信任 / 健康） */
+  --primary: #0d9488;
+  --primary-dark: #0f766e;
+  --primary-light: #ccfbf1;
+  /* 强调色：乳腺健康粉（关怀 / 女性） */
+  --accent: #db2777;
+  --accent-light: #fce7f3;
+  /* 中性色 */
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-soft: #475569;
+  --text-mute: #94a3b8;
+  /* 语义色 */
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --ok: #22c55e;
+  --radius: 14px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, .06), 0 1px 3px rgba(15, 23, 42, .08);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, .08), 0 2px 4px rgba(15, 23, 42, .06);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, .12);
+  --maxw: 1180px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* ---------------- 顶部导航 ---------------- */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--text); }
+.brand .logo {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: grid; place-items: center; color: #fff; font-size: 18px;
+}
+.brand:hover { text-decoration: none; }
+.nav-links { display: flex; gap: 6px; align-items: center; }
+.nav-links a {
+  padding: 8px 14px; border-radius: 9px; color: var(--text-soft);
+  font-weight: 500; font-size: 14.5px;
+}
+.nav-links a:hover { background: var(--bg); text-decoration: none; color: var(--text); }
+.nav-links a.active { background: var(--primary-light); color: var(--primary-dark); }
+.nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+
+/* ---------------- Hero ---------------- */
+.hero {
+  padding: 72px 0 56px;
+  background:
+    radial-gradient(900px 380px at 85% -10%, var(--accent-light), transparent),
+    radial-gradient(800px 360px at 0% 10%, var(--primary-light), transparent);
+}
+.hero h1 { font-size: 40px; line-height: 1.2; letter-spacing: -.5px; margin-bottom: 16px; }
+.hero p.lead { font-size: 18px; color: var(--text-soft); max-width: 640px; }
+.hero .pill {
+  display: inline-block; background: var(--surface); border: 1px solid var(--border);
+  color: var(--primary-dark); padding: 6px 14px; border-radius: 999px;
+  font-size: 13.5px; font-weight: 600; margin-bottom: 20px; box-shadow: var(--shadow-sm);
+}
+.hero-cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; border-radius: 11px; font-weight: 600; font-size: 15px;
+  cursor: pointer; border: 1px solid transparent; transition: .15s;
+}
+.btn-primary { background: var(--primary); color: #fff; box-shadow: var(--shadow-md); }
+.btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+.btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn-ghost:hover { text-decoration: none; border-color: var(--primary); color: var(--primary-dark); }
+
+/* ---------------- 卡片 / 网格 ---------------- */
+.section { padding: 56px 0; }
+.section-head { text-align: center; margin-bottom: 38px; }
+.section-head h2 { font-size: 28px; letter-spacing: -.3px; }
+.section-head p { color: var(--text-soft); margin-top: 8px; }
+
+.phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow-sm);
+  transition: .18s; display: flex; flex-direction: column;
+}
+.card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.card .tag {
+  align-self: flex-start; font-size: 12.5px; font-weight: 700; letter-spacing: .5px;
+  padding: 4px 11px; border-radius: 999px; margin-bottom: 14px;
+}
+.tag-pre { background: var(--primary-light); color: var(--primary-dark); }
+.tag-mid { background: #dbeafe; color: #1d4ed8; }
+.tag-post { background: var(--accent-light); color: var(--accent); }
+.card h3 { font-size: 19px; margin-bottom: 8px; }
+.card p { color: var(--text-soft); font-size: 14.5px; flex: 1; }
+.card .features { list-style: none; margin: 16px 0 18px; display: grid; gap: 7px; }
+.card .features li { font-size: 14px; color: var(--text-soft); display: flex; gap: 8px; align-items: center; }
+.card .features li::before { content: "✓"; color: var(--primary); font-weight: 700; }
+.card .more { font-weight: 600; font-size: 14.5px; }
+
+/* ---------------- 功能区块（落地页） ---------------- */
+.feature-block {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 30px; margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.feature-block h3 { font-size: 21px; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
+.feature-block .sub { color: var(--text-mute); font-size: 14px; margin-bottom: 18px; }
+.icon-badge {
+  width: 38px; height: 38px; border-radius: 10px; flex: none;
+  display: grid; place-items: center; font-size: 19px; color: #fff;
+}
+.bg-pre { background: var(--primary); }
+.bg-mid { background: #2563eb; }
+.bg-post { background: var(--accent); }
+
+/* ---------------- 表单 ---------------- */
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 11px 13px; border: 1px solid var(--border);
+  border-radius: 10px; font-size: 14.5px; font-family: inherit; background: #fff; color: var(--text);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light);
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+/* ---------------- 交互组件 ---------------- */
+.result-box {
+  margin-top: 18px; padding: 20px; border-radius: 12px;
+  background: var(--bg); border: 1px dashed var(--border); display: none;
+}
+.result-box.show { display: block; }
+.gauge { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.ring {
+  --p: 0; width: 110px; height: 110px; border-radius: 50%; flex: none;
+  background: conic-gradient(var(--primary) calc(var(--p) * 1%), var(--border) 0);
+  display: grid; place-items: center; position: relative;
+}
+.ring::after {
+  content: ""; position: absolute; inset: 12px; background: #fff; border-radius: 50%;
+}
+.ring span { position: relative; z-index: 1; font-weight: 700; font-size: 22px; }
+
+.risk-list { list-style: none; display: grid; gap: 8px; margin-top: 6px; }
+.risk-list li { font-size: 14px; color: var(--text-soft); display: flex; gap: 8px; }
+.risk-list li::before { content: "•"; color: var(--accent); }
+
+.steps { counter-reset: step; list-style: none; display: grid; gap: 14px; }
+.steps li {
+  position: relative; padding: 14px 16px 14px 56px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 12px; font-size: 14.5px;
+}
+.steps li::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 14px; top: 14px; width: 28px; height: 28px;
+  background: var(--primary); color: #fff; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 700; font-size: 14px;
+}
+.steps li b { display: block; margin-bottom: 2px; }
+
+/* 用药提醒列表 */
+.reminder-list { list-style: none; display: grid; gap: 10px; margin-top: 14px; }
+.reminder-list li {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: 11px; font-size: 14.5px;
+}
+.reminder-list .rm { color: var(--danger); cursor: pointer; border: none; background: none; font-size: 13px; }
+
+/* ---------------- 提示 / 免责 ---------------- */
+.note {
+  display: flex; gap: 10px; padding: 14px 16px; border-radius: 11px;
+  background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; font-size: 14px;
+}
+.disclaimer {
+  margin-top: 8px; padding: 26px 0; border-top: 1px solid var(--border);
+  color: var(--text-mute); font-size: 12.5px; line-height: 1.7;
+}
+
+/* ---------------- 页脚 ---------------- */
+.footer { background: #0f172a; color: #cbd5e1; padding: 40px 0 30px; margin-top: 40px; }
+.footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.footer a { color: #93c5fd; }
+.footer .brand { color: #fff; }
+.footer .small { font-size: 12.5px; color: #64748b; margin-top: 10px; }
+
+/* ---------------- 响应式 ---------------- */
+@media (max-width: 900px) {
+  .phase-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 32px; }
+}
+@media (max-width: 720px) {
+  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0;
+    background: #fff; flex-direction: column; padding: 12px; border-bottom: 1px solid var(--border); }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: block; }
+}

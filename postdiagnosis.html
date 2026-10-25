@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>诊后 · 乳腺肿瘤智能管理平台</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand"><span class="logo">♥</span> 乳腺健康管理平台</a>
+      <nav class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="prediagnosis.html">诊前</a>
+        <a href="diagnosis.html">诊中</a>
+        <a href="postdiagnosis.html" class="active">诊后</a>
+      </nav>
+      <button class="nav-toggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="pill">诊后 · POST-TREATMENT</span>
+      <h1>康复路上，不再独自面对</h1>
+      <p class="lead">从术后康复、规律用药到复发监测与心理支持，把长期管理变成一件省心的事。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 术后康复 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-post">🤸</span> 术后康复</h3>
+        <div class="sub">个性化康复计划，关注患肢功能与生活质量</div>
+        <ul class="risk-list">
+          <li>渐进式上肢功能锻炼（爬墙、肩关节活动度）</li>
+          <li>淋巴水肿预防与自我护理指导</li>
+          <li>伤口 / 引流管居家护理提醒</li>
+          <li>营养与饮食建议、体力活动渐进方案</li>
+        </ul>
+      </div>
+
+      <!-- 用药提醒 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-post">💊</span> 用药提醒</h3>
+        <div class="sub">添加你的用药计划，平台帮你按时提醒（演示：本地保存）</div>
+        <form id="med-form" class="grid-2">
+          <div class="field">
+            <label>药物名称</label>
+            <input type="text" name="med" placeholder="如：他莫昔芬" required />
+          </div>
+          <div class="field">
+            <label>剂量</label>
+            <input type="text" name="dose" placeholder="如：20mg" />
+          </div>
+          <div class="field">
+            <label>服药时间</label>
+            <input type="time" name="time" />
+          </div>
+          <div class="field" style="align-self:end">
+            <button type="submit" class="btn btn-primary" style="width:100%">添加提醒</button>
+          </div>
+        </form>
+        <ul id="med-list" class="reminder-list"></ul>
+      </div>
+
+      <!-- 复发监测 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-post">📈</span> 复发监测</h3>
+        <div class="sub">规律随访 + 症状日志，异常自动预警</div>
+        <ol class="steps">
+          <li><b>随访计划</b>：按分期生成复查时间表（体检、影像、肿瘤标志物）。</li>
+          <li><b>症状日志</b>：记录新发疼痛、肿块、咳嗽等，趋势可视化。</li>
+          <li><b>智能预警</b>：触发规则时提示及时就医，并同步主管医生。</li>
+        </ol>
+      </div>
+
+      <!-- 心理疏导 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-post">💗</span> 心理疏导</h3>
+        <div class="sub">身心同治，关注情绪与生活重建</div>
+        <ul class="risk-list">
+          <li>情绪自评量表（如 PHQ-9 / GAD-7）定期跟踪</li>
+          <li>正念放松、呼吸训练等自助练习</li>
+          <li>病友互助社群与专业心理咨询转介</li>
+          <li>形象与亲密关系重建支持资源</li>
+        </ul>
+        <div class="note" style="margin-top:14px">
+          💡 如出现持续情绪低落、失眠或自伤念头，请立即联系专业心理危机热线或就医。
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <div class="container">
+      ⚠️ 免责声明：本页面为产品原型演示，用药提醒仅保存在本地浏览器，不替代医嘱；情绪量表不能用于临床诊断。
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <div class="brand"><span class="logo">♥</span> 乳腺健康管理平台</div>
+        <div class="small">诊后模块 · 产品原型</div>
+      </div>
+      <div class="small"><a href="diagnosis.html">← 上一步：诊中</a> · <a href="index.html">返回首页</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>诊中 · 乳腺肿瘤智能管理平台</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand"><span class="logo">♥</span> 乳腺健康管理平台</a>
+      <nav class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="prediagnosis.html">诊前</a>
+        <a href="diagnosis.html" class="active">诊中</a>
+        <a href="postdiagnosis.html">诊后</a>
+      </nav>
+      <button class="nav-toggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="pill">诊中 · IN-DIAGNOSIS</span>
+      <h1>精准、协同的诊疗</h1>
+      <p class="lead">用智能分诊与统一电子病历打通科室壁垒，MDT 多学科会诊让每一位患者都拿到最优方案。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 智能分诊 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-mid">🧭</span> 智能分诊</h3>
+        <div class="sub">根据主诉与症状，推荐合适的就诊科室与紧急程度</div>
+        <form class="grid-2" onsubmit="event.preventDefault(); document.getElementById('triage-out').classList.add('show');">
+          <div class="field">
+            <label>主要不适</label>
+            <select>
+              <option>触及乳房肿块</option>
+              <option>乳头溢液</option>
+              <option>乳房疼痛</option>
+              <option>皮肤改变（凹陷/橘皮）</option>
+              <option>体检发现结节</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>持续时间</label>
+            <select>
+              <option>刚发现（&lt; 1 周）</option>
+              <option>1 周 – 1 月</option>
+              <option>&gt; 1 月</option>
+            </select>
+          </div>
+          <div class="field" style="align-self:end">
+            <button type="submit" class="btn btn-primary" style="width:100%">智能分诊</button>
+          </div>
+        </form>
+        <div id="triage-out" class="result-box">
+          <p style="font-size:14.5px"><b>分诊建议（演示）：</b>建议至 <b>乳腺外科 / 普外科</b> 就诊，优先级 <b style="color:var(--warn)">中</b>。
+          首诊通常包含：临床查体 → 乳腺超声 → 必要时钼靶 / 穿刺活检。</p>
+        </div>
+      </div>
+
+      <!-- 电子病历 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-mid">🗂️</span> 电子病历（EMR）</h3>
+        <div class="sub">诊疗全过程结构化记录，跨科室实时共享</div>
+        <ul class="risk-list">
+          <li>主诉 / 现病史 / 既往史结构化采集</li>
+          <li>影像（超声、钼靶、MRI）与病理报告归档</li>
+          <li>检验指标趋势图表（肿瘤标志物 CA15-3、CEA 等）</li>
+          <li>诊疗时间轴：就诊 — 检查 — 诊断 — 方案</li>
+        </ul>
+        <div class="note" style="margin-top:14px">
+          🔒 病历数据需符合《医疗卫生机构网络安全管理办法》与个人信息保护要求，正式版将做分级授权与加密存储。
+        </div>
+      </div>
+
+      <!-- MDT 会诊 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-mid">👥</span> MDT 多学科会诊系统</h3>
+        <div class="sub">乳腺外科 · 肿瘤内科 · 放疗科 · 病理科 · 影像科 · 心理科 在线协同</div>
+        <ol class="steps">
+          <li><b>发起</b>：主管医生提交病例与资料，系统自动汇总关键指标。</li>
+          <li><b>组队</b>：按病情推荐学科组合，邀请专家确认参会。</li>
+          <li><b>讨论</b>：共享影像 / 病理，在线标注与实时讨论。</li>
+          <li><b>共识</b>：生成结构化 MDT 意见与个体化治疗方案，回写病历。</li>
+        </ol>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <div class="container">
+      ⚠️ 免责声明：本页面为产品原型演示，分诊结果为示例逻辑，不能替代医生专业判断。
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <div class="brand"><span class="logo">♥</span> 乳腺健康管理平台</div>
+        <div class="small">诊中模块 · 产品原型</div>
+      </div>
+      <div class="small"><a href="prediagnosis.html">← 上一步：诊前</a> · <a href="postdiagnosis.html">下一步：诊后 →</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

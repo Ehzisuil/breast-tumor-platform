@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>诊前 · 乳腺肿瘤智能管理平台</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand"><span class="logo">♥</span> 乳腺健康管理平台</a>
+      <nav class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="prediagnosis.html" class="active">诊前</a>
+        <a href="diagnosis.html">诊中</a>
+        <a href="postdiagnosis.html">诊后</a>
+      </nav>
+      <button class="nav-toggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="pill">诊前 · PRE-DIAGNOSIS</span>
+      <h1>早发现，是最好的治疗</h1>
+      <p class="lead">通过 AI 风险量化、科普教育、规范自查与便捷预约，把防线前移到症状出现之前。</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- AI 风险评估 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-pre">🤖</span> AI 风险评估</h3>
+        <div class="sub">基于年龄、家族史、生育史、生活方式的多因素加权模型（演示）</div>
+        <form id="risk-form" class="grid-2">
+          <div class="field">
+            <label>年龄</label>
+            <select name="age">
+              <option value="0">&lt; 40 岁</option>
+              <option value="5">40–49 岁</option>
+              <option value="10">50–59 岁</option>
+              <option value="15">≥ 60 岁</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>一级亲属乳腺癌史</label>
+            <select name="family">
+              <option value="0">无</option>
+              <option value="12">1 位</option>
+              <option value="22">≥ 2 位</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>初潮年龄</label>
+            <select name="menarche">
+              <option value="0">≥ 14 岁</option>
+              <option value="6">&lt; 12 岁</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>生育 / 哺乳</label>
+            <select name="parity">
+              <option value="0">已育且哺乳</option>
+              <option value="8">未育 / 未哺乳</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>BMI</label>
+            <select name="bmi">
+              <option value="0">正常 (&lt; 24)</option>
+              <option value="6">超重 / 肥胖</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>饮酒</label>
+            <select name="alcohol">
+              <option value="0">不饮 / 偶尔</option>
+              <option value="5">经常</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>规律运动</label>
+            <select name="exercise">
+              <option value="0">是（每周≥3次）</option>
+              <option value="5">否</option>
+            </select>
+          </div>
+          <div class="field" style="align-self:end">
+            <button type="submit" class="btn btn-primary" style="width:100%">生成风险报告</button>
+          </div>
+        </form>
+        <div id="risk-result" class="result-box">
+          <div class="gauge">
+            <div class="ring" id="risk-ring"><span id="risk-pct">0%</span></div>
+            <div>
+              <div style="font-size:14px;color:var(--text-soft)">综合风险等级</div>
+              <div id="risk-level" style="font-size:22px;font-weight:700">—</div>
+              <p id="risk-advice" style="margin-top:6px;color:var(--text-soft);font-size:14.5px"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 科普 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-pre">📚</span> 科普与健康教育</h3>
+        <div class="sub">结构化知识库，按人群与主题精准推送</div>
+        <ul class="risk-list">
+          <li>认识乳腺：解剖、生理与常见疾病图谱</li>
+          <li>乳腺癌危险因素与可改变生活方式</li>
+          <li>筛查手段对比：自检 / 超声 / 钼靶 / MRI 怎么选</li>
+          <li>谣言粉碎：关于乳腺癌你该知道的真相</li>
+        </ul>
+      </div>
+
+      <!-- 自查指南 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-pre">🔍</span> 乳腺自查指南</h3>
+        <div class="sub">每月月经结束后 7–10 天，花 5 分钟做一次</div>
+        <ol class="steps">
+          <li><b>看</b>：面对镜子，双臂下垂与上举，观察乳房外形、皮肤有无凹陷或橘皮样改变。</li>
+          <li><b>触</b>：手指并拢，用指腹以画圈方式从外上象限向乳头螺旋式按压。</li>
+          <li><b>挤</b>：轻挤乳头，观察有无异常溢液（血性/单侧）。</li>
+          <li><b>查</b>：卧位重复触诊，并触摸腋窝淋巴结有无肿大。</li>
+        </ol>
+        <div class="note" style="margin-top:16px">
+          💡 自查不能替代医学筛查。若发现无痛性肿块、皮肤改变或溢液，请及时就诊。
+        </div>
+      </div>
+
+      <!-- 预约筛查 -->
+      <div class="feature-block">
+        <h3><span class="icon-badge bg-pre">📅</span> 预约筛查</h3>
+        <div class="sub">对接合作机构，在线预约乳腺超声 / 钼靶</div>
+        <form class="grid-2" onsubmit="event.preventDefault(); alert('演示：预约请求已提交（待接入真实排班系统）');">
+          <div class="field">
+            <label>姓名</label>
+            <input type="text" placeholder="请输入姓名" required />
+          </div>
+          <div class="field">
+            <label>手机号</label>
+            <input type="tel" placeholder="用于接收通知" required />
+          </div>
+          <div class="field">
+            <label>筛查项目</label>
+            <select>
+              <option>乳腺超声</option>
+              <option>乳腺钼靶（X线）</option>
+              <option>超声 + 钼靶联合</option>
+              <option>乳腺 MRI</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>期望时间</label>
+            <input type="date" />
+          </div>
+          <div class="field" style="grid-column:1/-1">
+            <button type="submit" class="btn btn-primary">提交预约</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    <div class="container">
+      ⚠️ 免责声明：本页面为产品原型演示，风险评估为简化加权示例，非临床工具。请遵医嘱进行规范筛查。
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div>
+        <div class="brand"><span class="logo">♥</span> 乳腺健康管理平台</div>
+        <div class="small">诊前模块 · 产品原型</div>
+      </div>
+      <div class="small"><a href="index.html">← 返回首页</a> · <a href="diagnosis.html">下一步：诊中 →</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
